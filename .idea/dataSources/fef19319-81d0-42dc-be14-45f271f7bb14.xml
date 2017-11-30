@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="bank_accounts@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="bank_accounts">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="company_db"/>
+    <schema id="4" parent="1" name="information_schema"/>
+    <schema id="5" parent="1" name="michaelh"/>
+    <schema id="6" parent="1" name="mysql"/>
+    <schema id="7" parent="1" name="performance_schema"/>
+    <schema id="8" parent="1" name="sakila"/>
+    <schema id="9" parent="1" name="sys"/>
+    <schema id="10" parent="1" name="thisdatabase"/>
+    <schema id="11" parent="1" name="world"/>
+    <table id="12" parent="2" name="accounts">
+      <Comment>Table Data for Accounts</Comment>
+    </table>
+    <table id="13" parent="2" name="accounttype">
+      <Comment>Table for Type of accounts</Comment>
+    </table>
+    <table id="14" parent="2" name="amounts">
+      <Comment>Table for Amounts of said accounts</Comment>
+    </table>
+    <table id="15" parent="2" name="clients">
+      <Comment>Table for Clients</Comment>
+    </table>
+    <column id="16" parent="12" name="acc_ID">
+      <Position>1</Position>
+      <Comment>Account Identification for BankAccounts</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="17" parent="12" name="acc_Regno">
+      <Position>2</Position>
+      <Comment>Registration number for Account (4 digits)</Comment>
+      <DataType>int(4)|0</DataType>
+    </column>
+    <column id="18" parent="12" name="acc_No">
+      <Position>3</Position>
+      <Comment>Account Number for Account (10 digits)</Comment>
+      <DataType>double|0</DataType>
+    </column>
+    <column id="19" parent="12" name="fk_client_ID">
+      <Position>4</Position>
+      <Comment>Foreign Key connected to Client ID in the table clients</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="20" parent="12" name="fk_type_ID">
+      <Position>5</Position>
+      <Comment>Foreign Key connected to type_ID</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="21" parent="12" name="fk_amount_ID">
+      <Position>6</Position>
+      <Comment>Foreign Key connected to amount_ID</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="22" parent="12" name="fk_amount_ID_idx">
+      <ColNames>fk_amount_ID</ColNames>
+    </index>
+    <index id="23" parent="12" name="fk_client_ID_idx">
+      <ColNames>fk_client_ID</ColNames>
+    </index>
+    <index id="24" parent="12" name="fk_type_ID_idx">
+      <ColNames>fk_type_ID</ColNames>
+    </index>
+    <key id="25" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>acc_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="26" parent="12" name="fk_client_ID">
+      <ColNames>fk_client_ID</ColNames>
+      <RefSchemaName>bank_accounts</RefSchemaName>
+      <RefTableName>clients</RefTableName>
+      <RefColNames>client_ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="27" parent="12" name="fk_type_ID">
+      <ColNames>fk_type_ID</ColNames>
+      <RefSchemaName>bank_accounts</RefSchemaName>
+      <RefTableName>accounttype</RefTableName>
+      <RefColNames>type_ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="28" parent="12" name="fk_amount_ID">
+      <ColNames>fk_amount_ID</ColNames>
+      <RefSchemaName>bank_accounts</RefSchemaName>
+      <RefTableName>amounts</RefTableName>
+      <RefColNames>amount_ID</RefColNames>
+    </foreign-key>
+    <column id="29" parent="13" name="type_ID">
+      <Position>1</Position>
+      <Comment>Type Identification</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="30" parent="13" name="type_Name">
+      <Position>2</Position>
+      <Comment>Name of Type (Løn / Opsparing)</Comment>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <key id="31" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>type_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="32" parent="14" name="amount_ID">
+      <Position>1</Position>
+      <Comment>Amount Identification for said account</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="33" parent="14" name="amount_Sum">
+      <Position>2</Position>
+      <Comment>The Sum of said account</Comment>
+      <DataType>double|0</DataType>
+    </column>
+    <key id="34" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>amount_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="35" parent="15" name="client_ID">
+      <Position>1</Position>
+      <Comment>Client Identification number</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="36" parent="15" name="client_Name">
+      <Position>2</Position>
+      <Comment>Client name (surname and lastname)</Comment>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <key id="37" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>client_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
