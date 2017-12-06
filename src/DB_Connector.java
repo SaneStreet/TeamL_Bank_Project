@@ -1,7 +1,4 @@
-
-
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
-
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -19,7 +16,7 @@ public class DB_Connector {
 
     //    private static String usr, pswrd;
     private static String usr = "root";
-    private static String pswrd = "root";
+    private static String pswrd = "030493";
 
     private static MysqlDataSource dataSource = new MysqlDataSource();
 
@@ -41,8 +38,8 @@ public class DB_Connector {
 
 
         dataSource.setUser("root");
-        dataSource.setPassword("root");
-        dataSource.setURL("jdbc:mysql://localhost:3306/testdb");
+        dataSource.setPassword("030493");
+        dataSource.setURL("jdbc:mysql://localhost:3306/teaml_bank");
 
         try{
 

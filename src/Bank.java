@@ -13,8 +13,9 @@ public class Bank {
         DB_Statements stmts = new DB_Statements();
 
         //statements method to use database
-        stmts.useDB("teaml_bank");
+        //stmts.useDB("teaml_bank");
+
         //statements method to read data
-        //stmts.selectFromTable("accounts");
+        stmts.selectFromTable();
     }
 }
