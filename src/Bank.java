@@ -21,7 +21,6 @@ public class Bank {
             switch (statements.getScene()) {
                 case 1:
                     statements.mainMenu();
-
                     break;
                 case 2:
                     stmts.createAccount();
