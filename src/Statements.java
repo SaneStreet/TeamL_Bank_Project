@@ -33,6 +33,8 @@ public class Statements {
 
         String dump = local.next();
 
+
+
         this.scene = scene;
 
         return scene;

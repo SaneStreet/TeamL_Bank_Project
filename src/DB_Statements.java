@@ -69,6 +69,6 @@ public class DB_Statements {
             ex.printStackTrace();
         }
 
-        statements.set_scene1(1);
+
     }
 }

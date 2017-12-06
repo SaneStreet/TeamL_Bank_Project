@@ -13,17 +13,26 @@ public class Bank {
         boolean power = true;
         statements.getScene();
 
+
         while (power == true) {
+
+
 
             switch (statements.getScene()) {
                 case 1:
                     statements.mainMenu();
+                    statements.set_scene1(1);
+                    statements.getScene();
                     break;
                 case 2:
                     stmts.createAccount();
+                    statements.set_scene1(1);
+                    statements.getScene();
                     break;
                 case 3:
                     stmts.selectFromTable();
+                    statements.set_scene1(1);
+                    statements.getScene();
                     break;
 
 
