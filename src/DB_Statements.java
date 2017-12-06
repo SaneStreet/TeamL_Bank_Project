@@ -1,6 +1,9 @@
 import java.sql.*;
 
+
 public class DB_Statements {
+    Statements statements = new Statements();
+
     //Declare a Statement
     private static Statement stmt = null;
     //Declare a connection
@@ -27,10 +30,21 @@ public class DB_Statements {
         }
     }
 
+    //Method to create an account
+    public void createAccount(){
+        System.out.println("vi skal starte ");
+        statements.set_scene1(1);
+    }
+
+
+
+
     //Method to read data from table
+
+
     public void selectFromTable(){
         //SQL query
-        String query = "SELECT fNavn, eNavn, konto_Navn, konto_Reg, konto_ID, konto_Saldo FROM person JOIN konti ON Person_ID = 1";
+        String query = "SELECT fNavn, eNavn, konto_Navn, konto_Reg, konto_ID, konto_Saldo FROM person JOIN konti ON Person_ID = fk_Person_ID";
 
         try {
             //connection
@@ -54,5 +68,7 @@ public class DB_Statements {
             System.out.println("\n--Query did not execute--");
             ex.printStackTrace();
         }
+
+        statements.set_scene1(1);
     }
 }
