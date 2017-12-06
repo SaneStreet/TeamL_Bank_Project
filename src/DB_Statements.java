@@ -33,7 +33,7 @@ public class DB_Statements {
     //Method to create an account
     public void createAccount(){
         System.out.println("vi skal starte ");
-        statements.set_scene1(1);
+
     }
 
 
